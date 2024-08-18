@@ -13,3 +13,9 @@ jobs:
       - name: List files in the repository
         run: |
           ls ${{ github.workspace }}
+      - name: Installing node.js
+        uses: actions/setup-node@v4
+          with:
+            node-version: '18'
+      - run: yarn install
+      - run: yarn lint
